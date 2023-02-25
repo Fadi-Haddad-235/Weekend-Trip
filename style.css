@@ -1,6 +1,6 @@
 body{
 font-family: roboto;
-background-color: #eff1f8;
+background-color: #e5e9f4
 }
 .container{
     display: flex;
@@ -22,7 +22,7 @@ background-color: #eff1f8;
 }
 .first-name, .last-name, .password, .email, .number{
     display: block;
-    margin:10px 0;
+    margin:15px 0;
 }
 .accounts img{
     height: 32px;
