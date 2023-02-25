@@ -92,6 +92,9 @@ function validateNumber(){
 }
 
 function validate (){
+    function toggleClassShake(){
+        signup_button.classList.toggle("shake");
+    }
     validateFirstName();
     validateLastName();
     validatePassword();
@@ -102,7 +105,8 @@ function validate (){
         bottom_section.classList.add("hidden")
     }
     else{
-        signup_button.classList.add("shake");
+        signup_button.classList.toggle("shake");
+        setTimeout(toggleClassShake, 500 ) ;
     }
 }
 
