@@ -32,12 +32,13 @@ function validateLastName(){
     if (lname.value.trim() ===""){
         lname_icon.classList.add("fa-xmark");
         lname_icon.classList.remove("fa-check");
+        lname_correct=false;
 
     }
     else{
         lname_icon.classList.remove("fa-xmark");
         lname_icon.classList.add("fa-check");
-        lname_correct=1;
+        lname_correct=true;
     }
 }
 
@@ -45,15 +46,15 @@ function validateLastName(){
 
 
 function validatePassword(){
-    if (password.value.trim() ===""){
-        password_icon.classList.add("fa-xmark");
-        password_icon.classList.remove("fa-check");
-
-    }
-    else{
+    if (password.value.length>8 && /[ -/:-@[-`{-~]/.test(password.value) && /[A-Z]/.test(password.value)){
         password_icon.classList.remove("fa-xmark");
         password_icon.classList.add("fa-check");
         password_correct=true;
+    }
+    else{
+        password_icon.classList.add("fa-xmark");
+        password_icon.classList.remove("fa-check");
+        pasword_correct=false;
     }
 }
 
@@ -61,21 +62,24 @@ function validatePassword(){
 
 
 function validateEmail(){
-    if (email.value.trim() ===""){
-        email_icon.classList.add("fa-xmark");
-        email_icon.classList.remove("fa-check");
-
-    }
-    else{
+    if (email.value.trim().match(/[^\s@]+@[^\s@]+\.[^\s@]+/gi)){
         email_icon.classList.remove("fa-xmark");
         email_icon.classList.add("fa-check");
         email_correct=true;
+
+    }
+    else{
+        email_icon.classList.remove("fa-check");
+        email_icon.classList.add("fa-xmark");
+        email_correct=false;
+
     }
 }
 function validateNumber(){
     if (number.value.trim() ===""){
         number_icon.classList.add("fa-xmark");
         number_icon.classList.remove("fa-check");
+        number_correct=false;
         
     }
     else{
