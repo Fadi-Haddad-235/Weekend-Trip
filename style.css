@@ -1,4 +1,5 @@
 body{
+font-family: roboto;
 background-color: #eff1f8;
 }
 .container{
@@ -38,9 +39,8 @@ background-color: #eff1f8;
     width:-webkit-fill-available;
     background-color:#8f2efd;
 display:inline-block;
-padding:0.3em 1.2em;
-margin:0 0.1em 0.1em 0;
-border:0.1em solid rgba(255,255,255,0);
+padding:0.1em;
+border:2px solid rgba(255,255,255,0);
 border-radius:2em;
 box-sizing: border-box;
 text-decoration:none;
@@ -55,3 +55,6 @@ font-size: 25px;
 .login-button:hover{
     border-color: rgba(255,255,255,1);
     }
+h1{
+    font-family: roboto;
+}
