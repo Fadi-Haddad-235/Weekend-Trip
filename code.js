@@ -12,6 +12,7 @@ const email_icon =document.getElementById("email-status");
 const number_icon =document.getElementById("number-status");
 const bottom_section=document.getElementById("bottom-section");
 
+
 signup_button=document.getElementById("signup-button");
 signup_button.addEventListener("click",validate);
 
@@ -19,6 +20,7 @@ function validateFirstName(){
     if (fname.value.trim() ===""){
         fname_icon.classList.add("fa-xmark");
         fname_icon.classList.remove("fa-check");
+        fname_correct=false;
 
     }
     else{
@@ -54,7 +56,7 @@ function validatePassword(){
     else{
         password_icon.classList.add("fa-xmark");
         password_icon.classList.remove("fa-check");
-        pasword_correct=false;
+        password_correct=false;
     }
 }
 
@@ -98,6 +100,9 @@ function validate (){
     if (fname_correct && lname_correct && password_correct && email_correct && number_correct){
         signup_button.innerHTML=`<a  id=login" href="second.html">Log In Now</a>`;
         bottom_section.classList.add("hidden")
+    }
+    else{
+        signup_button.classList.add("shake");
     }
 }
 

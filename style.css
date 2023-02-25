@@ -74,3 +74,26 @@ a:link {
     text-decoration: none;
     color: white;
   }
+#signup-button.shake{
+    animation: shake 0.3s;
+}
+@keyframes shake{
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(3em);
+    }
+    40% {
+      transform: translate(-3em);
+    }
+    60% {
+      transform: translate(3em);
+    }
+    80% {
+      transform: translate(-3em);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
