@@ -35,9 +35,9 @@ background-color: #e5e9f4
 .sign-up-text{
     text-align: center;
 }
-#signup-button{
-    width:-webkit-fill-available;
-    background-color:#8f2efd;
+#signup-button ,a #signup-button{
+width:-webkit-fill-available;
+background-color:#8f2efd;
 display:inline-block;
 padding:0.1em;
 border:2px solid rgba(255,255,255,0);
@@ -61,3 +61,16 @@ h1{
 i{
     float: right;
 }
+.hidden{
+    visibility: hidden;
+}
+#login{
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+  }
+a:link {
+    text-decoration: none;
+    color: white;
+  }
