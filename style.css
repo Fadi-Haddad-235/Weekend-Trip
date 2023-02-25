@@ -35,7 +35,7 @@ background-color: #e5e9f4
 .sign-up-text{
     text-align: center;
 }
-.signup-button{
+#signup-button{
     width:-webkit-fill-available;
     background-color:#8f2efd;
 display:inline-block;
