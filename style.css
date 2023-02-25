@@ -14,3 +14,14 @@
     display: block;
     margin:10px 0;
 }
+.accounts img{
+    height: 32px;
+    width: 32px;
+}
+.accounts{
+    display: flex;
+    justify-content: space-around;
+}
+.sign-up-text{
+    text-align: center;
+}
