@@ -35,7 +35,7 @@ background-color: #e5e9f4
 .sign-up-text{
     text-align: center;
 }
-.login-button{
+.signup-button{
     width:-webkit-fill-available;
     background-color:#8f2efd;
 display:inline-block;
@@ -52,9 +52,12 @@ text-align:center;
 transition: all 0.2s;
 font-size: 25px;
 }
-.login-button:hover{
+.signup-button:hover{
     border-color: rgba(255,255,255,1);
     }
 h1{
     font-family: roboto;
+}
+i{
+    float: right;
 }
