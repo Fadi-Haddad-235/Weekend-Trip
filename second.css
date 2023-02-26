@@ -16,3 +16,6 @@ body{
     flex-direction: column;
     padding:10px 0;
 }
+input, button{
+    font:inherit
+}
