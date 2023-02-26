@@ -102,7 +102,11 @@ function validate (){
     validateNumber();
     if (fname_correct && lname_correct && password_correct && email_correct && number_correct){
         signup_button.innerHTML=`<a  id=login" href="second.html">Log In Now</a>`;
-        bottom_section.classList.add("hidden")
+        bottom_section.classList.add("hidden");
+        var info_object = {"f_name": fname.value, "l_name": lname.value,
+        "password": password.value, "email": email.value,"number":number.value};
+        localStorage.setItem('myStorage', JSON.stringify(info_object));
+        console.log(info_object);
     }
     else{
         signup_button.classList.toggle("shake");
