@@ -20,3 +20,6 @@ input, button{
     font:inherit;
     margin: 5px 0;
 }
+#prime-output{
+    text-align: center;
+}

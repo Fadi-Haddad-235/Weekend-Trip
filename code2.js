@@ -7,7 +7,10 @@ window.onload=function(){
     pal_btn.addEventListener("click",checkPalindrome);
     const pal_result= document.getElementById("pal-result");
 
-
+    const prime_btn= document.getElementById("prime-btn");
+    prime_btn.addEventListener("click",checkIfPrime);
+    prime_output=document.getElementById("prime-output");
+    // console.log(prime_output)
     
     function sortNumbers(){
         unsorted_nums=[]
@@ -58,7 +61,32 @@ window.onload=function(){
             pal_result.value="String is NOT Palindromic"
         }
     }
+    
+    function checkIfPrime(){
+        const current_year = new Date().getFullYear()
+        const prime_input=current_year-document.getElementById("prime-input").value;
+        console.log(prime_input)
+        let isPrime = true;
+        if (prime_input == 1) {
+            prime_output.innerHTML = "Undefined";
+        }
 
+        else if (prime_input > 1) {
+            for (let i = 2; i < prime_input; i++) {
+                if (prime_input % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        if (isPrime) {
+            prime_output.innerHTML = `${prime_input} is Primary`;}
+            else {
+                prime_output.innerHTML = `${prime_input} is Not Primary`;
+            }
+        
+    }
 }
 
 
