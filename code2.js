@@ -12,6 +12,8 @@ window.onload=function(){
     prime_output=document.getElementById("prime-output");
     reverse_num_btn=document.getElementById("reverse-num-btn");
     reverse_num_btn.addEventListener("click",reverseNumbersInString);
+    str2_btn=document.getElementById("str2-btn");
+    str2_btn.addEventListener("click",moveConsonants);
     // console.log(prime_output)
     
     function sortNumbers(){
@@ -115,6 +117,16 @@ window.onload=function(){
         const reversed_number=extractNumbers(reverse_num_input);
         console.log(reversed_number);
         reverse_num_output.innerHTML=reversed_number;
+    }
+    function moveConsonants(){
+    const str2_input=document.getElementById("str2-input").value;
+    const str2_output=document.getElementById("str2-output");
+    let consonants = /[bcdfghjklmnpqrstvwxys]*/.exec(str2_input).join("");
+
+    consonants_length=consonants.length;
+    remaining_str=str2_input.slice(consonants_length);
+    final_str=remaining_str+consonants+"ay"
+    str2_output.innerHTML=final_str;
     }
 }
 

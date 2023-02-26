@@ -20,6 +20,6 @@ input, button{
     font:inherit;
     margin: 5px 0;
 }
-#prime-output, #reverse-num-output{
+#prime-output, #reverse-num-output, #str2-output{
     text-align: center;
 }
