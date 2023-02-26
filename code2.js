@@ -6,13 +6,15 @@ window.onload=function(){
     const pal_btn=document.getElementById("pal-btn");
     pal_btn.addEventListener("click",checkPalindrome);
     const pal_result= document.getElementById("pal-result");
+
+
     
     function sortNumbers(){
         unsorted_nums=[]
         var final_result=[]
         for (let i=1;i<=10;i++){
             n=prompt("enter number"+i);
-            unsorted_nums.push(n);
+            if(!isNaN(n)) unsorted_nums.push(n);
         }
 
         function mergeSort(input) {
