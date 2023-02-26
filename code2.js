@@ -2,6 +2,10 @@ window.onload=function(){
     const sort_btn=document.getElementById("sort-btn");
     const sort_result=document.getElementById("sort-result")
     sort_btn.addEventListener("click",sortNumbers);
+
+    const pal_btn=document.getElementById("pal-btn");
+    pal_btn.addEventListener("click",checkPalindrome);
+    const pal_result= document.getElementById("pal-result");
     
     function sortNumbers(){
         unsorted_nums=[]
@@ -34,4 +38,25 @@ window.onload=function(){
            
           sort_result.value=mergeSort(unsorted_nums);
     }
+    function isPalindrome(str){
+        if (str[0] === str[str.length - 1] && str.length > 1) {
+            isPalindrome(str.substring(1, str.length -1)) 
+            return true
+          }
+          else{
+            return false
+          }
+        }
+
+    function checkPalindrome(){
+        const pal_input=document.getElementById("pal-input").value;
+        if(isPalindrome(pal_input)){
+            pal_result.value="String is Palindromic"
+        }else{
+            pal_result.value="String is NOT Palindromic"
+        }
+    }
+
 }
+
+
