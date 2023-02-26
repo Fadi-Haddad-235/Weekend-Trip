@@ -10,6 +10,8 @@ window.onload=function(){
     const prime_btn= document.getElementById("prime-btn");
     prime_btn.addEventListener("click",checkIfPrime);
     prime_output=document.getElementById("prime-output");
+    reverse_num_btn=document.getElementById("reverse-num-btn");
+    reverse_num_btn.addEventListener("click",reverseNumbersInString);
     // console.log(prime_output)
     
     function sortNumbers(){
@@ -64,7 +66,7 @@ window.onload=function(){
     
     function checkIfPrime(){
         const current_year = new Date().getFullYear()
-        const prime_input=current_year-document.getElementById("prime-input").value;
+        const prime_input = current_year - document.getElementById("prime-input").value;
         console.log(prime_input)
         let isPrime = true;
         if (prime_input == 1) {
@@ -86,6 +88,33 @@ window.onload=function(){
                 prime_output.innerHTML = `${prime_input} is Not Primary`;
             }
         
+    }
+    function extractNumbers(str){
+        numbers_array=[];
+        str2=[]
+        for(let i=0;i<str.length;i++){
+            if(!isNaN(str[i]))
+            {numbers_array.push(str[i])}
+        }
+        numbers_array.reverse();
+
+        for (let j=0;j<str.length;j++){
+            if (!isNaN(str[j])){
+                str2.push(numbers_array[0])
+                numbers_array.shift();
+            }else{
+                str2.push(str[j]);
+            }
+        }
+        return str2.join("");
+    }
+    function reverseNumbersInString(){
+        reverse_num_input=document.getElementById("reverse-num-input").value;
+        reverse_num_output=document.getElementById("reverse-num-output");
+        // console.log(reverse_num_input);
+        const reversed_number=extractNumbers(reverse_num_input);
+        console.log(reversed_number);
+        reverse_num_output.innerHTML=reversed_number;
     }
 }
 
