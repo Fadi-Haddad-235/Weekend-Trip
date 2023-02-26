@@ -17,5 +17,6 @@ body{
     padding:10px 0;
 }
 input, button{
-    font:inherit
+    font:inherit;
+    margin: 5px 0;
 }
