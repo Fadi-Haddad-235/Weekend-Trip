@@ -19,7 +19,10 @@ window.onload=function(){
     location_btn=document.getElementById("location-btn");
     location_btn.addEventListener("click",showLocation);
     go_up_btn=document.getElementById("go-up");
-    go_up_btn.addEventListener("click",scrollToTop)
+    go_up_btn.addEventListener("click",scrollToTop);
+    animate_box_btn=document.getElementById("animate-box-btn");
+    animate_box_btn.addEventListener("click",animateBox);
+    card_box=document.getElementById("animate-box");
     
     function sortNumbers(){
         unsorted_nums=[]
@@ -168,7 +171,13 @@ window.onload=function(){
     function scrollToTop() {
         window.scrollTo(0, 0);
         }
-
+    function toggleClassShake(){
+        card_box.classList.toggle("shake");
+    }
+    function animateBox(){
+        card_box.classList.toggle("shake");
+        setTimeout(toggleClassShake, 500 ) ;
+    }
     }
 
 

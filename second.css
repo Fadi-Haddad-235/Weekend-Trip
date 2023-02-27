@@ -1,5 +1,6 @@
 body{
     background-color: rgb(160, 174, 255);
+    font-family: roboto;
 }
 .container{
     display: flex;
@@ -25,7 +26,7 @@ input, button{
     font:inherit;
     margin: 5px 0;
 }
-#prime-output, #reverse-num-output, #str2-output{
+#prime-output, #reverse-num-output, #str2-output, h3{
     text-align: center;
 }
 .card{
@@ -38,3 +39,41 @@ input, button{
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
+#animate-box.shake{
+animation: shake 0.3s;
+}
+@keyframes shake{
+0% {
+    transform: translate(0);
+}
+10% {
+    transform: translate(1em);
+}
+20% {
+    transform: translate(-1em);
+}
+30% {
+    transform: translate(1em);
+    }
+40% {
+transform: translate(-1em);
+}
+50% {
+transform: translate(1em);
+}
+60% {
+    transform: translate(-1em);
+}
+70% {
+    transform: translate(1em);
+    }
+80% {
+    transform: translate(-1em);
+}
+90% {
+    transform: translate(1em);
+    }
+100% {
+    transform: translate(0);
+}
+}
