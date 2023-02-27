@@ -103,6 +103,8 @@ function validate (){
     if (fname_correct && lname_correct && password_correct && email_correct && number_correct){
         signup_button.innerHTML=`<a  id=login" href="second.html">Log In Now</a>`;
         bottom_section.classList.add("hidden");
+        
+        // code to save the date in an object and then save it ti local storage
         var info_object = {"f_name": fname.value, "l_name": lname.value,
         "password": password.value, "email": email.value,"number":number.value};
         localStorage.setItem('myStorage', JSON.stringify(info_object));
