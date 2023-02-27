@@ -26,10 +26,11 @@ input, button{
     font:inherit;
     margin: 5px 0;
 }
-#prime-output, #reverse-num-output, #str2-output, h3{
+#prime-output, #reverse-num-output, #str2-output, h3,#user-ip{
     text-align: center;
 }
 .card{
+    min-width: 400px;
     border-radius: 10px;
     background-color: white;
     padding:50px !important;
