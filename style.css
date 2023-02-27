@@ -3,6 +3,7 @@ font-family: roboto;
 background-color: #e5e9f4
 }
 .container{
+  padding-top: 25px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -10,6 +11,8 @@ background-color: #e5e9f4
 }
 .left img{
     border-radius: 10px;
+    padding-right: 15px;
+    height: 612px;
 }
 .right{
     width: 500px;
