@@ -26,7 +26,7 @@ input, button{
     font:inherit;
     margin: 5px 0;
 }
-#prime-output, #reverse-num-output, #str2-output, h3,#user-ip{
+#prime-output, #reverse-num-output, #str2-output, h3,#user-ip, p{
     text-align: center;
 }
 .card{

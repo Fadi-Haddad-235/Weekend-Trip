@@ -23,6 +23,12 @@ window.onload=function(){
     animate_box_btn=document.getElementById("animate-box-btn");
     animate_box_btn.addEventListener("click",animateBox);
     card_box=document.getElementById("animate-box");
+    course_btn=document.getElementById("course-btn");
+    course_btn.addEventListener("click",createClass);
+    course_name_show=document.getElementById("course-name-show");
+    ins_name_show=document.getElementById("ins-name-show");
+    outcome_show=document.getElementById("outcome-show");
+
     
     function sortNumbers(){
         unsorted_nums=[]
@@ -178,6 +184,35 @@ window.onload=function(){
         card_box.classList.toggle("shake");
         setTimeout(toggleClassShake, 500 ) ;
     }
+    class Course {
+        constructor(course_name, ins_name , outcome) {
+          this.course_name = course_name;
+          this.ins_name = ins_name;
+          this.outcome = outcome;
+        }
+      }
+    function createClass(){
+        const course_name = document.getElementById("course-name").value
+        const ins_name = document.getElementById("ins-name").value
+        const outcome = document.getElementById("outcome").value
+
+        course= new Course(course_name,ins_name,outcome)
+        if(course_name && ins_name && outcome){
+            course_name_show.innerHTML="Course name: "+ course.course_name;
+            ins_name_show.innerHTML="Instructors name: "+course.ins_name;
+            outcome_show.innerHTML="Expected outcome: "+course.outcome;
+        }
+        else{
+            course_name_show.innerHTML="Fields can not be empty";
+            ins_name_show.innerHTML=null;
+            outcome_show.innerHTML=null;
+        }
+
+    }
+
+
+
+
     }
 
 
