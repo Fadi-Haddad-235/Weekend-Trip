@@ -14,7 +14,12 @@ window.onload=function(){
     reverse_num_btn.addEventListener("click",reverseNumbersInString);
     str2_btn=document.getElementById("str2-btn");
     str2_btn.addEventListener("click",moveConsonants);
-    // console.log(prime_output)
+    get_ip_btn=document.getElementById("get-ip-btn")
+    get_ip_btn.addEventListener("click",showIP);
+    location_btn=document.getElementById("location-btn");
+    location_btn.addEventListener("click",showLocation);
+    go_up_btn=document.getElementById("go-up");
+    go_up_btn.addEventListener("click",scrollToTop)
     
     function sortNumbers(){
         unsorted_nums=[]
@@ -115,19 +120,56 @@ window.onload=function(){
         reverse_num_output=document.getElementById("reverse-num-output");
         // console.log(reverse_num_input);
         const reversed_number=extractNumbers(reverse_num_input);
-        console.log(reversed_number);
+        // console.log(reversed_number);
         reverse_num_output.innerHTML=reversed_number;
     }
     function moveConsonants(){
-    const str2_input=document.getElementById("str2-input").value;
-    const str2_output=document.getElementById("str2-output");
-    let consonants = /[bcdfghjklmnpqrstvwxys]*/.exec(str2_input).join("");
-
-    consonants_length=consonants.length;
-    remaining_str=str2_input.slice(consonants_length);
-    final_str=remaining_str+consonants+"ay"
-    str2_output.innerHTML=final_str;
+        const str2_input=document.getElementById("str2-input").value;
+        const str2_output=document.getElementById("str2-output");
+        let consonants = /[bcdfghjklmnpqrstvwxys]*/.exec(str2_input).join("");
+        consonants_length=consonants.length;
+        remaining_str=str2_input.slice(consonants_length);
+        final_str=remaining_str+consonants+"ay";
+        str2_output.innerHTML=final_str;
     }
-}
+    function showIP(){
+        sum=0
+        ip="";
+        user_ip=document.getElementById("user-ip");
+        async function getIP(){
+            ip_numbers = []
+            const res= await fetch("https://api.ipify.org/?format=json");
+            ip= await res.json();
+            ip=ip.ip;
+            ip_numbers= ip.split(".");
+            for (let i=0;i<ip_numbers.length;i++){
+                if (ip_numbers[i]%2==0){
+                    sum+=ip_numbers[i];
+                }
+            }
+            user_ip.innerHTML=sum;
+        }
+        getIP()
+    }
+    function showLocation(){
+        user_location=document.getElementById("user-location")
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          } else {
+              user_position.innerHTML = "Geolocation is not supported by this browser.";
+          }
+        }
+    function showPosition(position) {
+        user_location.innerHTML = "Latitude: " + position.coords.latitude +"<br>"+
+        "Longitude: " + position.coords.longitude;
+        }
+    function scrollToTop() {
+        window.scrollTo(0, 0);
+        }
+
+    }
+
+
+
 
 
