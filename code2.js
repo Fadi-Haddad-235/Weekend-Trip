@@ -73,26 +73,28 @@ window.onload=function(){
     
     function checkIfPrime(){
         const current_year = new Date().getFullYear()
-        const prime_input = current_year - document.getElementById("prime-input").value;
-        console.log(prime_input)
-        let isPrime = true;
-        if (prime_input == 1) {
-            prime_output.innerHTML = "Undefined";
-        }
+        const age = current_year - document.getElementById("prime-input").value;
 
-        else if (prime_input > 1) {
-            for (let i = 2; i < prime_input; i++) {
-                if (prime_input % i == 0) {
+        let isPrime = true;
+        if (age == 1 || age==0) {
+            prime_output.innerHTML = "Undefined";
+            isPrime = flase;
+        }
+        else if (age > 1) {
+            for (let i = 2; i < age; i++) {
+                if (age % i == 0) {
                     isPrime = false;
                     break;
                 }
             }
         }
-
-        if (isPrime) {
-            prime_output.innerHTML = `${prime_input} is Primary`;}
+        if(age==current_year){
+            prime_output.innerHTML = `Enter valid DOB`;
+        }
+        else if (isPrime) {
+            prime_output.innerHTML = `your age is ${age} ,it is Primary`;}
             else {
-                prime_output.innerHTML = `${prime_input} is Not Primary`;
+                prime_output.innerHTML = `your age is ${age} is Not Primary`;
             }
         
     }

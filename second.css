@@ -1,9 +1,13 @@
+body{
+    background-color: rgb(160, 174, 255);
+}
 .container{
     display: flex;
     flex-direction: column;
     width: 50%;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 body{
     font-size: 20px;
@@ -24,3 +28,12 @@ input, button{
 #prime-output, #reverse-num-output, #str2-output{
     text-align: center;
 }
+.card{
+    background-color: white;
+    padding:50px !important;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
